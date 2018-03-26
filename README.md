@@ -17,45 +17,44 @@ package bg.uni.sofia.fmi.mjt.streams;
 
 public class FilePlaceholderReplacer {
 
-        public static void replace(String fromFileName, String toFileName, Map<String, String> placeholders) {
+    public static void replace(String fromFileName, String toFileName, Map<String, String> placeholders) {
 
-        }
-        ```
+}
+```
 
-        Методът `replace` копира файла с име `fromFileName` във файла `toFileName`, като всяко срещане на placeholder във входния файл се заменя със зададена стойност. Съответствието placehoder - стойност за замяна се задава с третия параметър - `Map`, в който ключовете са имена на placehoders, а стойностите са съдържанието, с което да бъдат заменени срещанията им.
+Методът `replace` копира файла с име `fromFileName` във файла `toFileName`, като всяко срещане на placeholder във входния файл се заменя със зададена стойност. Съответствието placehoder - стойност за замяна се задава с третия параметър - `Map`, в който ключовете са имена на placehoders, а стойностите са съдържанието, с което да бъдат заменени срещанията им.
 
-        Например, ако текстът на мейла с поканата от примера по-горе е записан във файл с име "generic_invitation.txt", извикването
+Например, ако текстът на мейла с поканата от примера по-горе е записан във файл с име "generic_invitation.txt", извикването
 
-        ```java
-        FilePlaceholderReplacer.replace("gen.txt", "inv.txt", Map.of("name", "Ники", "date", "15-17 декември 2017"));
-        ```
+```java
+FilePlaceholderReplacer.replace("gen.txt", "inv.txt", Map.of("name", "Ники", "date", "15-17 декември 2017"));
+```
 
-        трябва да създаде файл с име "inv.txt" със съдържание
+трябва да създаде файл с име "inv.txt" със съдържание
 
-        ```
-        Скъпи Ники,
+```
+Скъпи Ники,
 
-        Включи се в най-якия хакатон по тези ширини, FMI{Codes}! Очакваме те във ФМИ на 15-17 декември 2017.
-        ```
+Включи се в най-якия хакатон по тези ширини, FMI{Codes}! Очакваме те във ФМИ на 15-17 декември 2017.
+```
 
-        Обърнете внимание, че в текста на мейла {Codes} не се замества (не се приема за placeholder), тъй като в подадения `Map` няма ключ "Codes". За placeholder се приема само низ, започваш с '{', завършващ с '}', в случай че поднизът, ограден с фигурните скоби бъде *буквално* открит в подадения `Map`, като не се извършва никакъв whitespace stripping, т.е. в горния пример { name} не би бил placeholder, защото няма ключ " name".
+Обърнете внимание, че в текста на мейла {Codes} не се замества (не се приема за placeholder), тъй като в подадения `Map` няма ключ "Codes". За placeholder се приема само низ, започваш с '{', завършващ с '}', в случай че поднизът, ограден с фигурните скоби бъде *буквално* открит в подадения `Map`, като не се извършва никакъв whitespace stripping, т.е. в горния пример { name} не би бил placeholder, защото няма ключ " name".
 
-        Реализирайте `FilePlaceholderReplacer` чрез следния помощен клас:
+Реализирайте `FilePlaceholderReplacer` чрез следния помощен клас:
 
-        ```java
-        package bg.uni.sofia.fmi.mjt.streams;
+```java
+package bg.uni.sofia.fmi.mjt.streams;
 
-        public class StringReplacer {
-                
-                    public StringReplacer(String input) {
-                                // TODO: implement me
-                                    }
-                                        
-                                            public String replace(Map<String, String> map) {
-                                                        
-                                                                // TODO implement me
-                                                                    }
+public class StringReplacer {
+    
+    public StringReplacer(String input) {
+        // TODO: implement me
+    }
+    
+    public String replace(Map<String, String> map) {
+        
+        // TODO implement me
+    }
 
-        }
-        ```
-
+}
+```
